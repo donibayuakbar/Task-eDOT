@@ -11,7 +11,7 @@ class EworkMobileTest:
         desired_caps = {
             "platformName": "Android",
             "automationName": "UiAutomator2",
-            "deviceName": "Xiaomi 220333QPG",  # ganti dengan nama device real
+            "deviceName": "Xiaomi 220333QPG",
             "appPackage": "id.edot.ework",
             "appActivity": "id.edot.onboarding.ui.splash.SplashScreenActivity",
             "noReset": False,
@@ -89,7 +89,6 @@ class EworkMobileTest:
     def run_test(self):
         try:
             self.login()
-            # beri delay lebih lama untuk menunggu transisi halaman selesai
             time.sleep(3)
             self.tampilData()
         finally:

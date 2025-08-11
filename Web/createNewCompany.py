@@ -7,7 +7,7 @@ import time
 class EsuiteWebTest:
     def __init__(self):
         # ==== CONFIG ====
-        self.base_url = "https://esuite.edot.id"  # Ganti dengan URL login kamu
+        self.base_url = "https://esuite.edot.id"
         self.email = "it.qa@edot.id"
         self.password = "it.QA2025"
         self.driver = webdriver.Chrome()
@@ -23,7 +23,7 @@ class EsuiteWebTest:
                 EC.element_to_be_clickable((By.XPATH, "//button[contains(., 'Use Email or Username')]"))
             )
             use_email_btn.click()
-            time.sleep(1)  # jeda kecil untuk transisi
+            time.sleep(1)
 
             # 2. Input Email
             email_input = self.wait.until(

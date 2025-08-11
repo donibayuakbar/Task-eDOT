@@ -12,17 +12,17 @@ class EworkMobileTest:
         desired_caps = {
             "platformName": "Android",
             "automationName": "UiAutomator2",
-            "deviceName": "Xiaomi 220333QPG",  # ganti dengan nama device real
-            "appPackage": "id.edot.ework",  # ganti jika berbeda
+            "deviceName": "Xiaomi 220333QPG",
+            "appPackage": "id.edot.ework",
             "appActivity": "id.edot.onboarding.ui.splash.SplashScreenActivity",
             "noReset": False,
             "newCommandTimeout": 300
         }
 
-        # 2. Bungkus desired_caps ke UiAutomator2Options
+        # 2. UiAutomator2Options
         options = UiAutomator2Options().load_capabilities(desired_caps)
 
-        # 3. Start Appium Driver
+        # 3. Jalankan Appium Driver
         self.driver = webdriver.Remote("http://localhost:4723/wd/hub", options=options)
         self.wait = WebDriverWait(self.driver, 20)
 
@@ -187,7 +187,7 @@ class EworkMobileTest:
         klik_kecamatan.click()
         time.sleep(1)
 
-        # Scroll lagi untuk menampilkan kelurahan
+        # Scroll lagi
         self.driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiScrollable(new UiSelector().scrollable(true)).scrollForward()')
         time.sleep(1)
 
